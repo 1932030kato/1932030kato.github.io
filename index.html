@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head><!-- 裏設定エリアの開始 -->
-    <meta charset="utf-8"><!-- 文字化け防止 -->
-</head><!-- 裏設定エリアの終了 -->
+<!doctype html>
+<HTML>
 
-<body><!-- 画面に表示されるエリアの開始 -->
-    Hello World！
-</body><!-- 画面に表示されるエリアの終了 -->
-</html>
+<HEAD>
+	<meta charset="UTF-8">
+	<title>JavaScriptの基礎</title>
+</HEAD>
+
+<BODY>
+    <script type="text/javascript">
+        today = new Date();
+        document.write(today);
+        document.write("<h1>コンピュータグラフィックス</h1>");
+        document.write("<p>担当　中村直人</p>");
+        document.write("<p>この授業では、WebGLを用いてコンピュータグラフィックスを作成します。</p>");
+    
+        var image = new Image(128,128); //image オブジェクトの作成
+        image.src = "ganba.png"; //imageのソースの指定
+        document.body.appendChild(image); //imageをDOM要素に組み込む
+    </script>
+
+</BODY>
+
+</HTML>
