@@ -2,7 +2,7 @@ var init = function() {
 
   var width = 1200,
       height = 900;
-      
+
   var renderer = new THREE.WebGLRenderer();
   renderer.setSize(width, height);
   document.body.appendChild(renderer.domElement);
@@ -19,7 +19,7 @@ var init = function() {
   var torusGeometry6 = new THREE.TorusGeometry( 0.5, 0.2, 16, 75 );
   var torusMaterial1 = new THREE. MeshPhongMaterial( { color: 0xff8800 } );
   var torusMaterial2 = new THREE. MeshPhongMaterial( { color: 0xff8800,wireframe: true} );
-  var torusMaterial3 = new THREE. MeshBasicMaterial( { color: 0xff8800} );
+  var torusMaterial3 = new THREE. MeshStandardMaterial( { color: 0xff8800} );
   var torusMaterial4 = new THREE. MeshLambertMaterial( { color: 0xff8800} );
   var torusMaterial5 = new THREE. MeshPhongMaterial( { color: 0xff8800} );
   var torus1 = new THREE.Mesh( torusGeometry1, torusMaterial3 );
