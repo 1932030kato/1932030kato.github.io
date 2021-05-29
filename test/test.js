@@ -17,6 +17,7 @@ var init = function() {
   var torusGeometry4 = new THREE.TorusGeometry( 0.5, 0.2, 6, 12 );
   var torusGeometry5 = new THREE.TorusGeometry( 0.5, 0.2, 6, 12 );
   var torusGeometry6 = new THREE.TorusGeometry( 0.5, 0.2, 16, 75 );
+  //材質の要素
   var torusMaterial1 = new THREE. MeshPhongMaterial( { color: 0xff8800 } );
   var torusMaterial2 = new THREE. MeshPhongMaterial( { color: 0xff8800,wireframe: true} );
   var torusMaterial3 = new THREE. MeshStandardMaterial( { color: 0xff8800} );
