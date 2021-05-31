@@ -16,12 +16,12 @@ var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
 
  // テクスチャー読み込み
  var textureLoader = new THREE.TextureLoader();
-var texture = textureLoader.load("pic/uroko.jpg");
+var texture = textureLoader.load("uroko.jpg");
 var mat = new THREE.MeshPhongMaterial();
 mat.map = texture;
 
 // バンプマップ読み込み
-var bump = textureLoader.load("pic/uroko_bump.jpg");
+var bump = textureLoader.load("uroko_bump.jpg");
 mat.bumpMap = bump;
 mat.bumpscale = 0.2;
 
