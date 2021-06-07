@@ -51,8 +51,8 @@ var update = function() {
   requestAnimationFrame(update);
 
   // 箱を回転させる
-  box.rotation.x += 0.01;
-  box.rotation.y += 0.01;
+  //box.rotation.x += 0.01;
+  //box.rotation.y += 0.01;
 
   renderer.render(scene, camera);
 };
