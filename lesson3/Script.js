@@ -12,7 +12,8 @@ var init = function() {
   var scene = new THREE.Scene();
 
   // カメラを作成
-var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+var camera = new THREE.PerspectiveCamera(45, width / height);
+camera.position.set(0, 0, 1000);
 
 const controls = new THREE.OrbitControls(camera,document.body);
 
@@ -28,7 +29,7 @@ mat.bumpMap = bump;
 mat.bumpscale = 0.2;
 
 // 箱を作成
-var geometry = new THREE.BoxGeometry(1, 1, 1);
+var geometry = new THREE.BoxGeometry(300, 300, 300);
 //var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
 //var box = new THREE.Mesh(geometry, material);
 var box = new THREE.Mesh(geometry, mat);
