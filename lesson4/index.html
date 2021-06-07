@@ -29,6 +29,16 @@
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera,document.body);
 
+        var textureLoader = new THREE.TextureLoader();
+       var texture = textureLoader.load("../lesson3/uroko.jpg");
+       var mat = new THREE.MeshPhongMaterial();
+       mat.map = texture;
+
+       // バンプマップ読み込み
+       var bump = textureLoader.load("../lesson3/uroko_bump.jpg");
+       mat.bumpMap = bump;
+       mat.bumpscale = 0.2;
+
         // 平行光源1
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
         directionalLight1.position.set(100, 100, 100);
@@ -42,8 +52,8 @@
 
         // 箱を作成(原点に作成)
         var geometry = new THREE.BoxGeometry(300, 300, 300);
-        var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-        var box = new THREE.Mesh(geometry, material);
+        //var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+        var box = new THREE.Mesh(geometry, met);
         scene.add(box);
 
         tick();
