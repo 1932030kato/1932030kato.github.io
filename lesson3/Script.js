@@ -14,6 +14,8 @@ var init = function() {
   // カメラを作成
 var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
 
+const controls = new THREE.OrbitControls(camera,document.body);
+
  // テクスチャー読み込み
  var textureLoader = new THREE.TextureLoader();
 var texture = textureLoader.load("uroko.jpg");
