@@ -27,6 +27,7 @@
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
         directionalLight1.position.set(100, 100, 100);
         scene.add(directionalLight1);
+
         var directionalLight2 = new THREE.DirectionalLight(0xffffff);
         directionalLight2.position.set(-100, 100, 100);
         scene.add(directionalLight2);
@@ -36,7 +37,7 @@
 
         var textureLoader = new THREE.TextureLoader();
         var texture0 = textureLoader.load("cote.png");
-        var mat0 = new THREE.MeshLambertMaterial({transparent: true});
+        var mat0 = new THREE.MeshPhongMaterial();
         mat0.map = texture0;
 
         var bump = textureLoader.load("koto2-bump.jpg");
