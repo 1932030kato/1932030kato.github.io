@@ -27,7 +27,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 0, 10000);
+        camera.position.set(0, 0, 1000);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera,document.body);
@@ -57,10 +57,10 @@
         scene.add(light);
 
         // 箱を作成(原点に作成)
-        var geometry = new THREE.BoxGeometry(300, 300, 300);
-        var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-        var box = new THREE.Mesh(geometry, material);
-        scene.add(box);
+        //var geometry = new THREE.BoxGeometry(300, 300, 300);
+        //var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+        //var box = new THREE.Mesh(geometry, material);
+        //scene.add(box);
 
         //var textureLoader = new THREE.TextureLoader();
         //var texture0 = textureLoader.load("cote.png");
@@ -68,12 +68,18 @@
         //mat0.map = texture0;
 
         // 木0を作成(原点に作成)
-        //var geometry = new THREE.PlaneGeometry(600, 600);
-        //var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-        //var cote = new THREE.Mesh(geometry, material);
-        //cote.position.set(0, 0, 0);
-        //cote.rotation.set(0, 1.7, 0);
-        //scene.add(cote);
+        var geometry = new THREE.PlaneGeometry(600, 600);
+        var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+        var cote = new THREE.Mesh(geometry, material);
+        cote.position.set(0, -100, 0);
+        cote.rotation.set(3 * Math.PI/2, 0, 0);
+        scene.add(cote);
+
+        const gridHelper = new THREE.GridHelper(400,50); // size, step
+        scene.add(gridHelper);
+
+        const axisHelper = new THREE.AxisHelper(400,50);
+        scene.add(axisHelper);
 
         tick();
 
