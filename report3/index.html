@@ -4,75 +4,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
     <script src="OrbitControls.js"></script>
     <script>
-      // ページの読み込みを待つ
       window.addEventListener('load', init);
 
       function init() {
-        // サイズを指定
         const width = 960;
         const height = 540;
 
-        // レンダラーを作成
         const renderer = new THREE.WebGLRenderer({
           canvas: document.querySelector('#myCanvas')
         });
         renderer.setSize(width, height);
 
-        //背景色の設定
         renderer.setClearColor(0x4db56a);
 
-        // シーンを作成
         const scene = new THREE.Scene();
 
-        // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
-        // カメラの初期座標を設定
         camera.position.set(0, 0, 1000);
 
-        // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera,document.body);
 
-      //  var textureLoader = new THREE.TextureLoader();
-      // var texture = textureLoader.load("../lesson3/uroko.jpg");
-       //var mat = new THREE.MeshPhongMaterial();
-       //mat.map = texture;
-
-       // バンプマップ読み込み
-       //var bump = textureLoader.load("kotobmp.jpg");
-       //mat.bumpMap = bump;
-       //mat.bumpscale = 0.3;
-
-        // 平行光源1
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
         directionalLight1.position.set(100, 100, 100);
-        // シーンに追加
         scene.add(directionalLight1);
-        // 平行光源2
         var directionalLight2 = new THREE.DirectionalLight(0xffffff);
         directionalLight2.position.set(-100, 100, 100);
-        // シーンに追加
         scene.add(directionalLight2);
 
         //const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
         //scene.add(light);
-
-        // 箱を作成(原点に作成)
-        //var geometry = new THREE.BoxGeometry(300, 300, 300);
-        //var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-        //var box = new THREE.Mesh(geometry, material);
-        //scene.add(box);
 
         var textureLoader = new THREE.TextureLoader();
         var texture0 = textureLoader.load("cote.png");
         var mat0 = new THREE.MeshLambertMaterial({transparent: true});
         mat0.map = texture0;
 
-        // バンプマップ読み込み
         var bump = textureLoader.load("koto2-bump.jpg");
         mat0.bumpMap = bump;
         mat0.bumpscale = 0.3;
 
-        // 木0を作成(原点に作成)
         var geometry = new THREE.PlaneGeometry(600, 600);
         //var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
         //var cote = new THREE.Mesh(geometry, material);
@@ -81,7 +51,7 @@
         cote.rotation.set(3 * Math.PI/2, 0, 0);
         scene.add(cote);
 
-        const gridHelper = new THREE.GridHelper(400,50); // size, step
+        const gridHelper = new THREE.GridHelper(400,50);
         scene.add(gridHelper);
 
         const axisHelper = new THREE.AxisHelper(400,50);
@@ -89,9 +59,7 @@
 
         tick();
 
-        // 毎フレーム時に実行されるループイベントです
         function tick() {
-          // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(tick);
         }
