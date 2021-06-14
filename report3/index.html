@@ -67,16 +67,15 @@
         var mat0 = new THREE.MeshLambertMaterial({transparent: true});
         mat0.map = texture0;
 
+        // バンプマップ読み込み
+        var bump = textureLoader.load("koto2-bump.jpg");
+        mat0.bumpMap = bump;
+        mat0.bumpscale = 0.3;
+
         // 木0を作成(原点に作成)
         var geometry = new THREE.PlaneGeometry(600, 600);
         //var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
         //var cote = new THREE.Mesh(geometry, material);
-
-        // バンプマップ読み込み
-        var bump = textureLoader.load("kotobmp.jpg");
-        mat0.bumpMap = bump;
-        mat0.bumpscale = 0.3;
-
         var cote = new THREE.Mesh(geometry, mat0);
         cote.position.set(0, -100, 0);
         cote.rotation.set(3 * Math.PI/2, 0, 0);
