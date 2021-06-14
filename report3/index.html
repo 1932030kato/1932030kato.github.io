@@ -52,6 +52,15 @@
         cote.rotation.set(3 * Math.PI/2, 0, 0);
         scene.add(cote);
 
+        const geometry1 = new THREE.SphereGeometry( 5, 64, 64 );
+        //const material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+
+        var texture1 = textureLoader.load("ball.jpg");
+        var mat1 = new THREE.MeshPhongMaterial();
+        mat1.map = texture1;
+        const sphere = new THREE.Mesh( geometry1, mat1 );
+        scene.add( sphere );
+
         const gridHelper = new THREE.GridHelper(400,50);
         scene.add(gridHelper);
 
