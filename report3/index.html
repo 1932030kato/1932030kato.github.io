@@ -3,6 +3,7 @@
     <meta charset="utf-8" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
     <script src="OrbitControls.js"></script>
+    <script src="js/loader/ColladaLoader.js"></script>
     <script>
       window.addEventListener('load', init);
 
@@ -60,6 +61,15 @@
         mat1.map = texture1;
         const sphere = new THREE.Mesh( geometry1, mat1 );
         scene.add( sphere );
+
+        // 3DS形式のモデルデータを読み込む
+        const loader = new THREE.ColladaLoader();
+        // 3dsファイルのパスを指定
+        loader.load('Ball DAE.dae', (collada) => {
+            // 読み込み後に3D空間に追加
+            const model = collada.scene;
+            scene.add(model);
+        });
 
         const gridHelper = new THREE.GridHelper(400,50);
         scene.add(gridHelper);
