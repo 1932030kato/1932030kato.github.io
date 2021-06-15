@@ -3,7 +3,6 @@
     <meta charset="utf-8" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
     <script src="OrbitControls.js"></script>
-    <script src="js/loader/ColladaLoader.js"></script>
     <script>
       window.addEventListener('load', init);
 
@@ -63,24 +62,7 @@
         sphere.position.set(100, 0, 0);
         scene.add( sphere );
 
-        var loader = new THREE.ColladaLoader();
-        loader.load('Ball DAE.dae', function(data)
-        {
-          data.scene.traverse(function(obj)
-          {
-            if(obj instanceof THREE.Mesh === true)
-            {
-              var mesh = obj;
-              mesh.material = new THREE.ShaderMaterial({
-                vertexShader: document.getElementById('vertexShader').textContent,
-                vertexColors: THREE.VertexColors,
-                fragmentShader: document.getElementById('fragmentShader').textContent
-              });
-              // あらかじめ生成したsceneにadd
-              scene.add(mesh);
-            }
-          });
-        });
+
 
         const gridHelper = new THREE.GridHelper(400,50);
         scene.add(gridHelper);
