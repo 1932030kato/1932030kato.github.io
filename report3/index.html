@@ -73,12 +73,12 @@
         scene.add(sprite1);*/
 
         var texture2 = textureLoader.load("player1.png");
-        var mat2 = new THREE.MeshDepthMaterial();
-        var mat3 = new THREE.MeshDistanceMaterial();
-        var mat4 = new THREE.MeshMatcapMaterial();
-        var mat5 = new THREE.MeshNormalMaterial();
-        var mat6 = new THREE.MeshPhongMaterial();
-        var mat7 = new THREE.MeshPhysicalMaterial();
+        var mat2 = new THREE.MeshStandardMaterial();
+        var mat3 = new THREE.MeshToonMaterial();
+        var mat4 = new THREE.PointsMaterial();
+        var mat5 = new THREE.RawShaderMaterial();
+        var mat6 = new THREE.ShaderMaterial();
+        var mat7 = new THREE.ShadowMaterial();
         mat2.map = texture2;
         mat3.map = texture2;
         mat4.map = texture2;
