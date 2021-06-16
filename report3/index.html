@@ -80,6 +80,11 @@
         var mat6 = new THREE.MeshPhongMaterial();
         var mat7 = new THREE.MeshPhysicalMaterial();
         mat2.map = texture2;
+        mat3.map = texture2;
+        mat4.map = texture2;
+        mat5.map = texture2;
+        mat6.map = texture2;
+        mat7.map = texture2;
         var geometry2 = new THREE.PlaneGeometry(50, 50);
         var player1 = new THREE.Mesh(geometry2, mat2);
         var player2 = new THREE.Mesh(geometry2, mat3);
@@ -87,20 +92,18 @@
         var player4 = new THREE.Mesh(geometry2, mat5);
         var player5 = new THREE.Mesh(geometry2, mat6);
         var player6 = new THREE.Mesh(geometry2, mat7);
-        player1.position.set(-200, 0, 0);
-        player2.position.set(-150, 0, 0);
-        player3.position.set(-100, 0, 0);
-        player4.position.set(-50, 0, 0);
-        player5.position.set(0, 0, 0);
-        player6.position.set(50, 0, 0);
-        player7.position.set(100, 0, 0);
+        player1.position.set(-100, 0, 0);
+        player2.position.set(-50, 0, 0);
+        player3.position.set(0, 0, 0);
+        player4.position.set(50, 0, 0);
+        player5.position.set(100, 0, 0);
+        player6.position.set(150, 0, 0);
         scene.add(player1);
         scene.add(player2);
         scene.add(player3);
         scene.add(player4);
         scene.add(player5);
         scene.add(player6);
-        scene.add(player7);
 
 
         const gridHelper = new THREE.GridHelper(400,50);
