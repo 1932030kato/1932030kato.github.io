@@ -44,15 +44,23 @@
         mat0.bumpMap = bump;
         mat0.bumpscale = 0.3;
 
-        var geometry = new THREE.PlaneGeometry(510, 300);
-        //var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-        //var cote = new THREE.Mesh(geometry, material);
-        var cote = new THREE.Mesh(geometry, mat0);
+        var geometry0 = new THREE.PlaneGeometry(510, 300);
+        var cote = new THREE.Mesh(geometry0, mat0);
         cote.position.set(0, -100, 0);
         cote.rotation.set(3 * Math.PI/2, 0, 0);
         scene.add(cote);
 
-        const geometry1 = new THREE.SphereGeometry( 5, 64, 64 );
+        var texture1 = textureLoader.load("siba.png");
+        var mat1 = new THREE.MeshPhongMaterial();
+        mat1.map = texture1;
+
+        var geometry1 = new THREE.PlaneGeometry(510, 300);
+        var cote = new THREE.Mesh(geometry1, mat1);
+        cote1.position.set(0, -101, 0);
+        cote1.rotation.set(3 * Math.PI/2, 0, 0);
+        scene.add(cote1);
+
+        /*const geometry1 = new THREE.SphereGeometry( 5, 64, 64 );
         //const material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
 
         var texture1 = textureLoader.load("ball.jpg");
@@ -60,9 +68,9 @@
         mat1.map = texture1;
         const sphere = new THREE.Mesh( geometry1, mat1 );
         sphere.position.set(100, 0, 0);
-        scene.add( sphere );
+        scene.add( sphere );*/
 
-        /*var texture2 = textureLoader.load("player1.png");
+        var texture2 = textureLoader.load("player1.png");
         const material1 = new THREE.SpriteMaterial({ map: texture2,});
 
         const sprite1 = new THREE.Sprite(material1);
@@ -70,40 +78,9 @@
         sprite1.position.y = 50;
         sprite1.position.z = -100;
         sprite1.scale.set(100,100,100);
-        scene.add(sprite1);*/
+        scene.add(sprite1);
 
-        var texture2 = textureLoader.load("player1.png");
-        var mat2 = new THREE.MeshStandardMaterial();
-        var mat3 = new THREE.MeshToonMaterial();
-        var mat4 = new THREE.PointsMaterial();
-        var mat5 = new THREE.RawShaderMaterial();
-        var mat6 = new THREE.ShaderMaterial();
-        var mat7 = new THREE.ShadowMaterial();
-        mat2.map = texture2;
-        mat3.map = texture2;
-        mat4.map = texture2;
-        mat5.map = texture2;
-        mat6.map = texture2;
-        mat7.map = texture2;
-        var geometry2 = new THREE.PlaneGeometry(50, 50);
-        var player1 = new THREE.Mesh(geometry2, mat2);
-        var player2 = new THREE.Mesh(geometry2, mat3);
-        var player3 = new THREE.Mesh(geometry2, mat4);
-        var player4 = new THREE.Mesh(geometry2, mat5);
-        var player5 = new THREE.Mesh(geometry2, mat6);
-        var player6 = new THREE.Mesh(geometry2, mat7);
-        player1.position.set(-100, 0, 0);
-        player2.position.set(-50, 0, 0);
-        player3.position.set(0, 0, 0);
-        player4.position.set(50, 0, 0);
-        player5.position.set(100, 0, 0);
-        player6.position.set(150, 0, 0);
-        scene.add(player1);
-        scene.add(player2);
-        scene.add(player3);
-        scene.add(player4);
-        scene.add(player5);
-        scene.add(player6);
+
 
 
         const gridHelper = new THREE.GridHelper(400,50);
