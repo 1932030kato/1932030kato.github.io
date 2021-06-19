@@ -65,34 +65,23 @@
         //選手その１
         var texture2 = textureLoader.load("player1.png");
         const material1 = new THREE.SpriteMaterial({ map: texture2,});
-
         const sprite1 = new THREE.Sprite(material1);
-        sprite1.position.x = -100;
-        sprite1.position.y = -82;
-        sprite1.position.z = -100;
+        sprite1.position.set(-100, -82, -100);
         sprite1.scale.set(23,36,100);
         scene.add(sprite1);
 
+        const sprite2 = new THREE.Sprite(material1);
+        sprite2.position.set(-80, -82, 60);
+        sprite2.scale.set(23,36,100);
+        scene.add(sprite2);
+
         //ゴール
-        /*var materials = [
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture(".png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img2.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img3.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img4.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img5.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img6.png")}),
-         ];*/
-
-
-        //var mat2 = new THREE.MeshFaceMaterial(materials); // マテリアルをセット
-        var texture2 = textureLoader.load("goal-side.png");
-        var mat2 = new THREE.MeshPhongMaterial();
-        mat2.map = texture2;
-
-        // 箱を作成
-        var geometry2 = new THREE.BoxGeometry(80, 80, 140);
-        var box1 = new THREE.Mesh(geometry2, mat2);
-        var box2 = new THREE.Mesh(geometry2, mat2);
+        var texture-goal = textureLoader.load("goal-side.png");
+        var mat-goal = new THREE.MeshPhongMaterial();
+        mat-goal.map = texture-goal;
+        var geo-goal = new THREE.BoxGeometry(80, 80, 140);
+        var box1 = new THREE.Mesh(geo-goal, mat-goal);
+        var box2 = new THREE.Mesh(geo-goal, mat-goal);
         box1.position.set(270,-60,0);
         box2.position.set(-270,-60,0);
         scene.add(box1);
