@@ -32,8 +32,8 @@
         directionalLight2.position.set(-100, 100, 100);
         scene.add(directionalLight2);
 
-        //const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
-        //scene.add(light);
+        const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
+        scene.add(light);
 
         //コート
         var textureLoader = new THREE.TextureLoader();
@@ -90,7 +90,7 @@
           mat2.map = texture2;
 
          // 箱を作成
-         var geometry2 = new THREE.BoxGeometry(100, 100, 200);
+         var geometry2 = new THREE.BoxGeometry(100, 100, 140);
          var box = new THREE.Mesh(geometry2, mat2);
          box.position.set(255,-50,0);
          scene.add(box);
