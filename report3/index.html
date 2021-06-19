@@ -65,6 +65,16 @@
         //選手その１
         var texture2 = textureLoader.load("player1.png");
         const material1 = new THREE.SpriteMaterial({ map: texture2,});
+
+        var texture3 = textureLoader.load("player2.png");
+        const material2 = new THREE.SpriteMaterial({ map: texture3,});
+
+        var texture4 = textureLoader.load("player3.png");
+        const material3 = new THREE.SpriteMaterial({ map: texture4,});
+
+        var texture5 = textureLoader.load("player4.png");
+        const material4 = new THREE.SpriteMaterial({ map: texture5,});
+
         const sprite1 = new THREE.Sprite(material1);
         sprite1.position.set(-100, -82, -100);
         sprite1.scale.set(23,36,100);
@@ -74,6 +84,11 @@
         sprite2.position.set(-80, -82, 60);
         sprite2.scale.set(23,36,100);
         scene.add(sprite2);
+
+        const sprite3 = new THREE.Sprite(material4);
+        sprite3.position.set(220, -89, 0);
+        sprite3.scale.set(23,36,100);
+        scene.add(sprite3);
 
         //ゴール
         var texturegoal = textureLoader.load("goal-side.png");
