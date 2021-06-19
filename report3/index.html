@@ -75,6 +75,12 @@
         var texture5 = textureLoader.load("player4.png");//221, 221
         const material4 = new THREE.SpriteMaterial({ map: texture5,});
 
+        var texture5 = textureLoader.load("player5.png");//231, 363
+        const material4 = new THREE.SpriteMaterial({ map: texture5,});
+
+        var texture5 = textureLoader.load("player6.png");//277, 380
+        const material4 = new THREE.SpriteMaterial({ map: texture5,});
+
         const sprite1 = new THREE.Sprite(material1);
         sprite1.position.set(-100, -82, -100);
         sprite1.scale.set(23,36,100);
@@ -94,6 +100,16 @@
         sprite4.position.set(-210, -82, 0);
         sprite4.scale.set(36,36,100);
         scene.add(sprite4);
+
+        const sprite5 = new THREE.Sprite(material6);
+        sprite5.position.set(-300, -82, 150);
+        sprite5.scale.set(28,36,100);
+        scene.add(sprite5);
+
+        const sprite6 = new THREE.Sprite(material6);
+        sprite6.position.set(-100, -82, -160);
+        sprite6.scale.set(28,36,100);
+        scene.add(sprite6);
 
         //ゴール
         var texturegoal = textureLoader.load("goal-side.png");
