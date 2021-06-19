@@ -32,6 +32,8 @@
         directionalLight2.position.set(-100, 100, 100);
         scene.add(directionalLight2);
 
+
+
         const light = new THREE.AmbientLight(0xFFFFFF, 0.1);
         scene.add(light);
 
@@ -47,7 +49,7 @@
 
         var geometry0 = new THREE.PlaneGeometry(510, 300);
         var cote = new THREE.Mesh(geometry0, mat0);
-        cote.position.set(0, -100, 0);
+        cote.position.set(0, -50, 0);
         cote.rotation.set(3 * Math.PI/2, 0, 0);
         scene.add(cote);
 
@@ -58,11 +60,11 @@
 
         var geometry1 = new THREE.PlaneGeometry(2000, 2000);
         var cote1 = new THREE.Mesh(geometry1, mat1);
-        cote1.position.set(0, -101, 0);
+        cote1.position.set(0, -51, 0);
         cote1.rotation.set(3 * Math.PI/2, 0, 0);
         scene.add(cote1);
 
-        //選手その１
+        //選手
         var texture2 = textureLoader.load("player1.png");//231, 363
         const material1 = new THREE.SpriteMaterial({ map: texture2,});
 
@@ -82,17 +84,17 @@
         const material6 = new THREE.SpriteMaterial({ map: texture7,});
 
         const sprite1 = new THREE.Sprite(material1);
-        sprite1.position.set(-40, -82, -90);
+        sprite1.position.set(-40, -32, -90);
         sprite1.scale.set(23,36,100);
         scene.add(sprite1);
 
         const sprite2 = new THREE.Sprite(material1);
-        sprite2.position.set(-70, -82, 60);
+        sprite2.position.set(-70, -32, 60);
         sprite2.scale.set(23,36,100);
         scene.add(sprite2);
 
         const sprite3 = new THREE.Sprite(material4);
-        sprite3.position.set(210, -82, 0);
+        sprite3.position.set(210, -32, 0);
         sprite3.scale.set(36,36,100);
         scene.add(sprite3);
 
@@ -102,33 +104,41 @@
         scene.add(sprite4);
 
         const sprite5 = new THREE.Sprite(material6);
-        sprite5.position.set(-190, -82, 80);
+        sprite5.position.set(-190, -32, 80);
         sprite5.scale.set(28,36,100);
         scene.add(sprite5);
 
         const sprite6 = new THREE.Sprite(material6);
-        sprite6.position.set(-100, -82, -60);
+        sprite6.position.set(-100, -32, -60);
         sprite6.scale.set(28,36,100);
         scene.add(sprite6);
 
         const sprite7 = new THREE.Sprite(material2);
-        sprite7.position.set(20, -82, -40);
+        sprite7.position.set(20, -32, -40);
         sprite7.scale.set(25,36,100);
         scene.add(sprite7);
 
         const sprite8 = new THREE.Sprite(material3);
-        sprite8.position.set(40, -82, 30);
+        sprite8.position.set(40, -32, 30);
         sprite8.scale.set(27,36,100);
         scene.add(sprite8);
 
         const sprite9 = new THREE.Sprite(material5);
-        sprite9.position.set(100, -82, -60);
+        sprite9.position.set(100, -32, -60);
         sprite9.scale.set(23,36,100);
         scene.add(sprite9);
 
         const sprite10 = new THREE.Sprite(material5);
-        sprite10.position.set(140, -82, 80);
+        sprite10.position.set(140, -32, 80);
         sprite10.scale.set(23,36,100);
+        scene.add(sprite10);
+
+        //ボール
+        var texture10 = textureLoader.load("ball.png");
+        const material10 = new THREE.SpriteMaterial({ map: texture10,});
+        const sprite10 = new THREE.Sprite(material10);
+        sprite10.position.set(0, 10, 0);
+        sprite10.scale.set(10,10,100);
         scene.add(sprite10);
 
         //ゴール
@@ -138,8 +148,8 @@
         var geogoal = new THREE.BoxGeometry(80, 80, 140);
         var box1 = new THREE.Mesh(geogoal, matgoal);
         var box2 = new THREE.Mesh(geogoal, matgoal);
-        box1.position.set(270,-60,0);
-        box2.position.set(-270,-60,0);
+        box1.position.set(270,-10,0);
+        box2.position.set(-270,-10,0);
         scene.add(box1);
         scene.add(box2);
 
