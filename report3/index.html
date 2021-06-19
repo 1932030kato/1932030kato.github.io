@@ -32,10 +32,13 @@
         directionalLight2.position.set(-100, 100, 100);
         scene.add(directionalLight2);
 
-
-
         const light = new THREE.AmbientLight(0xFFFFFF, 0.1);
         scene.add(light);
+
+        var Spotlight1 = new THREE.SpotLight(0xffffff, 1, 100, Math.PI / 6, 0.2);
+        Spotlight1.position.set(300, 300, 300);
+        Spotlight1.castShadow = true;
+        scene.add(Spotlight1);
 
         //コート
         var textureLoader = new THREE.TextureLoader();
